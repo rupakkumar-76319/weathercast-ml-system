@@ -20,7 +20,7 @@ def predict(input_data):
     df['month_cos'] = np.cos(2*np.pi*df['Month']/12)
 
     # IMPORTANT: match training columns
-    train_cols = joblib.load('models/columns.pkl')  # we will create this
+    train_cols = joblib.load(os.path.join(BASE_DIR, "models/columns.pkl"))  # we will create this
 
     df = pd.get_dummies(df)
 
